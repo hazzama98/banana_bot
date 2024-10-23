@@ -4,8 +4,8 @@ import time
 import sys
 import json
 import os
-from Crypto.Cipher import AES
-from Crypto import Random
+from Cryptodome.Cipher import AES
+from Cryptodome import Random
 from datetime import datetime
 from fake_useragent import FakeUserAgent, UserAgent
 import pytz
