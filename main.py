@@ -165,7 +165,7 @@ class Banana:
             if get_user['data']['max_click_count'] > get_user['data']['today_click_count']:
                 click = self.do_click(token=token, click_count=get_user['data']['max_click_count'] - get_user['data']['today_click_count'])
                 if click['msg'] == "Success":
-                    log_system(f"{Fore.GREEN + Style.BRIGHT}[ Clicked {click['data']['peel']} 🍌 ]{Style.RESET_ALL}")
+                    log_system(f"{Fore.GREEN + Style.BRIGHT}[ Clicked {click['data']['peel']}]{Style.RESET_ALL}")
                 else:
                     log_system(f"{Fore.RED + Style.BRIGHT}[ {click['msg']} ]{Style.RESET_ALL}")
             else:
@@ -184,7 +184,7 @@ class Banana:
             else:
                 claim_lottery = self.claim_lottery(token=token, lottery_type=1)
                 if claim_lottery['msg'] == "Success":
-                    log_system(f"{Fore.GREEN + Style.BRIGHT}[ Lottery Claimed 🍌 ]{Style.RESET_ALL}")
+                    log_system(f"{Fore.GREEN + Style.BRIGHT}[ Lottery Claimed]{Style.RESET_ALL}")
                     time.sleep(2)
                     log_system('Claim Ads')
                     ads = self.claim_ads(token=token, type=2)
@@ -296,7 +296,7 @@ class Banana:
         data = response
         if data['msg'] == "Success":
             log_system(
-                f"{Fore.YELLOW + Style.BRIGHT}[ {data['data']['banana_info']['name']} 🍌 ]{Style.RESET_ALL}"
+                f"{Fore.YELLOW + Style.BRIGHT}[ {data['data']['banana_info']['name']} ]{Style.RESET_ALL}"
                 f"{Fore.WHITE + Style.BRIGHT} | {Style.RESET_ALL}"
                 f"{Fore.YELLOW + Style.BRIGHT}[ Ripeness {data['data']['banana_info']['ripeness']} ]{Style.RESET_ALL}"
             )
@@ -329,7 +329,7 @@ class Banana:
                     equip_banana = self.do_equip(token=token, banana_id=highest_banana['banana_id'])
                     if equip_banana['msg'] == "Success":
                         log_system(
-                            f"{Fore.YELLOW + Style.BRIGHT}[ {highest_banana['name']} 🍌 ]{Style.RESET_ALL}"
+                            f"{Fore.YELLOW + Style.BRIGHT}[ {highest_banana['name']}]{Style.RESET_ALL}"
                             f"{Fore.WHITE + Style.BRIGHT} | {Style.RESET_ALL}"
                             f"{Fore.YELLOW + Style.BRIGHT}[ Ripeness {highest_banana['ripeness']} ]{Style.RESET_ALL}"
                             f"{Fore.WHITE + Style.BRIGHT} | {Style.RESET_ALL}"
@@ -340,7 +340,7 @@ class Banana:
                 else:
                     log_system("[INFO] Currently using the best available banana.")
                     log_system(
-                        f"{Fore.YELLOW + Style.BRIGHT}[ {highest_banana['name']} 🍌 ]{Style.RESET_ALL}"
+                        f"{Fore.YELLOW + Style.BRIGHT}[ {highest_banana['name']}]{Style.RESET_ALL}"
                         f"{Fore.WHITE + Style.BRIGHT} | {Style.RESET_ALL}"
                         f"{Fore.YELLOW + Style.BRIGHT}[ Ripeness {highest_banana['ripeness']} ]{Style.RESET_ALL}"
                         f"{Fore.WHITE + Style.BRIGHT} | {Style.RESET_ALL}"
@@ -352,14 +352,14 @@ class Banana:
                     if sell_banana['msg'] == "Success":
                         log_system(f"{Fore.MAGENTA + Style.BRIGHT}[ Only One {sell['name']} Remaining ]{Style.RESET_ALL}")
                         log_system(
-                            f"{Fore.YELLOW + Style.BRIGHT}[ Sell Got {sell_banana['data']['sell_got_peel']} Peel 🍌 ]{Style.RESET_ALL}"
+                            f"{Fore.YELLOW + Style.BRIGHT}[ Sell Got {sell_banana['data']['sell_got_peel']} Peel]{Style.RESET_ALL}"
                             f"{Fore.WHITE + Style.BRIGHT} | {Style.RESET_ALL}"
-                            f"{Fore.GREEN + Style.BRIGHT}[ Sell Got {sell_banana['data']['sell_got_usdt']} USDT 🤑 ]{Style.RESET_ALL}"
+                            f"{Fore.GREEN + Style.BRIGHT}[ Sell Got {sell_banana['data']['sell_got_usdt']} USDT]{Style.RESET_ALL}"
                         )
                         log_system(
-                            f"{Fore.YELLOW + Style.BRIGHT}[ {sell_banana['data']['peel']} Peel 🍌 ]{Style.RESET_ALL}"
+                            f"{Fore.YELLOW + Style.BRIGHT}[ {sell_banana['data']['peel']} Peel]{Style.RESET_ALL}"
                             f"{Fore.WHITE + Style.BRIGHT} | {Style.RESET_ALL}"
-                            f"{Fore.GREEN + Style.BRIGHT}[ {sell_banana['data']['usdt']} USDT 🤑 ]{Style.RESET_ALL}"
+                            f"{Fore.GREEN + Style.BRIGHT}[ {sell_banana['data']['usdt']} USDT]{Style.RESET_ALL}"
                         )
                     else:
                         log_system(f"{Fore.RED + Style.BRIGHT}[ {sell_banana['msg']} ]{Style.RESET_ALL}")
@@ -577,11 +577,11 @@ def main():
             time.sleep(2)
             get_user = ban.get_user_info(token=token)
             log_system(
-                f"{Fore.CYAN + Style.BRIGHT}[ {get_user['data']['username']} 🤖 ]{Style.RESET_ALL}"
+                f"{Fore.CYAN + Style.BRIGHT}[ {get_user['data']['username']}]{Style.RESET_ALL}"
                 f"{Fore.WHITE + Style.BRIGHT} | {Style.RESET_ALL}"
-                f"{Fore.YELLOW + Style.BRIGHT}[ Peel {get_user['data']['peel']} 🍌 ]{Style.RESET_ALL}"
+                f"{Fore.YELLOW + Style.BRIGHT}[ Peel {get_user['data']['peel']}]{Style.RESET_ALL}"
                 f"{Fore.WHITE + Style.BRIGHT} | {Style.RESET_ALL}"
-                f"{Fore.GREEN + Style.BRIGHT}[ USDT {get_user['data']['usdt']} 🤑 ]{Style.RESET_ALL}"
+                f"{Fore.GREEN + Style.BRIGHT}[ USDT {get_user['data']['usdt']}]{Style.RESET_ALL}"
             )
             assets += get_user['data']['usdt']
             peels += get_user['data']['peel']
