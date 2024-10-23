@@ -1,0 +1,17 @@
+{
+    "use_proxy": false,
+    "proxy_list": [
+        "http://proxy1.example.com:8080",
+        "http://proxy2.example.com:8080"
+    ],
+    "rotate_user_agent": true,
+    "request_delay": {
+        "min": 1,
+        "max": 5
+    },
+    "features": {
+        "claim_ads": true,
+        "claim_quest": true,
+        "claim_lottery": true
+    }
+}
